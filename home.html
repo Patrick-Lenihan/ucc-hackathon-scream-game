@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Scream Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <script src="{{ url_for('static', filename='jumpingGame.js') }}" type="module" ></script>
+        <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}"/>
+    </head>
+    <body>
+        <h1>A Dreamy Creamy Screamy Game</h1>
+        <h2 id="title"></h2>
+        <nav>
+            <button id="home">Home</button>
+            <button id="game1">Jumpython</button>
+        </nav>
+        <canvas id="canvas" width="512" height="320">
+        </canvas>
+        <main>
+
+        </main>
+        <footer>
+            &copy;Be quiet. I'm gaming.
+        </footer>
+    </body>
+</html>
