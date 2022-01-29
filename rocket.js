@@ -66,9 +66,10 @@ function drawAll() {
 
             console.log(total);
             speed *= 0.95;
-            
+
             if (total <= 0) {
                 speed = 0;
+                console.log(maxHeight);
             };
 
         };
