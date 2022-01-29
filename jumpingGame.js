@@ -24,7 +24,7 @@ let player = {
   yChange: 0,
   health: 100,
   state: "running",
-
+  count: 0
 };
 
 document.addEventListener("DOMContentLoaded", init, false);
@@ -55,14 +55,20 @@ function drawAll() {
         player.width * player.frameX, player.height * player.frameY,
         player.width, player.height,
         player.x, player.y, player.width, player.height);
+      
       if(player.state == "running"){
+        player.height = 65;
+        player.width = 65;
         player.frameX = (player.frameX + 1) % 8;
       } else {
-        playerImage.src = "jumping.png";
+        player.height = 144;
+        player.width = 80;
+        player.frameX = (player.frameX + 1) % 7;
         
       }
-      if (average > 100) {
+      if (average > 50 && player.state == "running") {
         player.state = "jumping";
+        playerImage.src = "jumping.png";
       }
 
     }
