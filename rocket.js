@@ -62,6 +62,9 @@ function drawAll() {
 
             if (height % (canvas.height * 4) === 0) {
                 index += 1;
+                if (index === blueList.length - 1) {
+                    index = blueList.length - 1;
+                }
             }
 
             console.log(total);
