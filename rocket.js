@@ -41,7 +41,7 @@ function drawAll() {
     context.fillRect(0, 0, canvas.width, canvas.height);
 
 
-    if (counter >= 100) {
+    if (counter >= 500) {
         playerY -= speed;
 
         if (maxHeight >= 10000) {
@@ -74,7 +74,7 @@ function drawAll() {
 
         };
 
-    } else if (counter < 100) {
+    } else if (counter < 500) {
         context.drawImage(playerImage,
             80*6, 0, playerwidth, playerheight,
             canvas.width/2-(playerwidth/2), playerY-72, playerwidth, playerheight/2);
@@ -106,7 +106,7 @@ function scream() {
             average = arraySum / array.length;
             
             // timer for 10s
-            if (counter <= 100) {
+            if (counter <= 500) {
                 total += Math.round(average);
                 console.log(total)
                 counter++;
