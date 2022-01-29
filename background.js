@@ -110,19 +110,22 @@ function drawAll() {
       if (player.health >0) {
 
       
-        if(player.state == "running"){
+        if(player.state === "running"){
           player.frameX = (player.frameX + 1) % 8;
           context.drawImage(playerImage, 
           player.width * player.frameX, player.height * player.frameY,
           player.width, player.height,
           player.x, player.y, player.width, player.height);
         } else {
+          
           player.y += player.speed;
-          player.speed = player.speed + 3 
+          player.speed = player.speed + 3; 
+
           if (player.y > 240){
-            player.y = 240;
+            player.y = 239;
             player.state = "running";
             playerImage.src = "running.png";
+            player.speed = -30;
             player.width = 65
             player.frameX = 0;
             player.frameY = 0;
@@ -133,13 +136,7 @@ function drawAll() {
             player.width * player.frameX, player.height * player.frameY,
             player.width, player.height,
             player.x, player.y, player.width, player.height);// source x of tc, sorcey of tc , source width, source height , dest x, dest y, destwidth, destheight
-          if (player.y >= 280){
-          player.state = "running";
-          player.width = 65
-          player.frameX = 0;
-          player.frameY = 0;
-          player.height = 65;
-          }
+          
         }
         if (average > 40) {
           // checking if the average is greater than 100 and then swithching the source to 100
