@@ -1,18 +1,49 @@
+let subgameBackground = [
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+]
+
+
 let request;
 let fpsInterval = 1000 / 15;
 let then = Date.now();
 
 let playerImage = new Image();
-
+let grassImage = new Image();
+let bat = new Image();
+let rock = new Image();
 let average = 0;
 let canvas = document.getElementById("canvas")
 let context = canvas.getContext("2d");
-
+let backgroundCount = 0;
 let jumpcount = 0;
 let clicks = 0;
-
+let tilesPerRow = 10;
+let tileSize = 16;
+let backgroundCountX = 0;
+let backgroundCountY = 0;
 playerImage.src = "running.png";
-
+grassImage.src = "tiles.png";
+rock.src = "rock.png";
+bat.src = "silverbat.png";
 let player = {
   x: 50,
   y: 200,
@@ -26,6 +57,28 @@ let player = {
   state: "running",
   count: 0
 };
+
+
+let rock1 = {
+  x: 512,
+  y: 280,
+  height: 10,
+  width: 10
+}
+let rock2 = {
+  x: 712,
+  y: 280,
+  height: 10,
+  width: 10
+}
+let bat1 = {
+  x: 512,
+  y: 232,
+  height: 48,
+  width: 32,
+  frameX: 0,
+  frameY: 1
+}
 
 document.addEventListener("DOMContentLoaded", init, false);
 
@@ -49,6 +102,9 @@ function drawAll() {
     context.clearRect(0,0,512,320);
     context.fillRect(50, 300-average, 20, 20);
     context.fillRect(0, 0, 512, 320);
+
+    subgame()
+
     if (player.health >0) {
 
       context.drawImage(playerImage,
@@ -73,6 +129,62 @@ function drawAll() {
 
     }
 
+}
+
+function subgame() {
+  tilesPerRow = 6;
+  backgroundCount = backgroundCount + 1
+  if (backgroundCount === 16) {
+    backgroundCount = 0;
+  }
+  for (let r = 0; r < 20; r += 1) {
+    for (let c = 0; c < 35; c += 1) {
+      let tile = subgameBackground[r][c];
+      if (tile >= 0) {
+        let tileRow = Math.floor(tile / tilesPerRow);
+        let tileCol = Math.floor(tile % tilesPerRow);
+        context.drawImage(grassImage, tileCol * tileSize, tileRow * tileSize, tileSize, tileSize,
+          (c * tileSize) - backgroundCount * 2, r * tileSize, tileSize, tileSize);
+      }
+    }
+  }
+
+  context.drawImage(rock, rock1.x, rock1.y - 20, rock1.width * 5, rock1.height * 5);
+                rock1.x = rock1.x - 6;
+                if (rock1.x < 0 - rock1.width) {
+                    rock1.x = canvas.width;
+                }
+                context.drawImage(rock, rock2.x, rock2.y - 20, rock2.width * 5, rock2.height * 5);
+                rock2.x = rock2.x - 6;
+                if (rock2.x < 0 - rock2.width) {
+                    rock2.x = canvas.width + 20;
+                }
+
+                context.drawImage(bat,
+                    bat1.width * bat1.frameX, bat1.height * bat1.frameY,
+                    bat1.width, bat1.height,
+                    bat1.x, bat1.y - 70, bat1.width, bat1.height);
+                bat1.frameX = (bat1.frameX + 1) % 4;
+                bat1.x = bat1.x - 9;
+                if (bat1.x < 0 - bat1.width) {
+                  bat1.x = canvas.width;
+              }
+
+              collision(player, rock1)
+              collision(player, rock2)
+              collision(player, bat1)
+
+}
+
+
+function collision(player, obstacle) {
+  // cases of collision
+  if (!((player.x > obstacle.x + obstacle.width) ||
+      ((player.x - 15 + player.width < obstacle.x)) ||
+      ((player.y - 10 + player.height < obstacle.y)) ||
+      ((player.y > obstacle.y)))) {
+      console.log("Done")
+  }
 }
 
 
