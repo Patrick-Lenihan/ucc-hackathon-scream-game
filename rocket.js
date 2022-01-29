@@ -15,12 +15,12 @@ let playerheight = 144;
 let maxHeight = 0;
 let height = 0;
 
+
 let index = 0;
-let blueList = ["rgb(240,248,255)", "rgb(176,224,230)", "rgb(173,216,230)", "rgb(135,206,250)", "rgb(135,206,235)", "rgb(0,191,255)", "rgb(30,144,255)", "rgb(65,105,225)", "rgb(0,0,255)", "rgb(0,0,139)"]
+let blueList = ["rgb(240,248,255)", "rgb(176,224,230)", "rgb(173,216,230)", "rgb(135,206,250)", "rgb(135,206,235)", "rgb(0,191,255)", "rgb(30,144,255)", "rgb(65,105,225)", "rgb(0,0,255)", "rgb(0,0,139)", "rgb(0,0,0)"]
 
 document.addEventListener("DOMContentLoaded", init, false);
 
-// jump into space
 
 function init () {
     playerImage.src = "jumping.png"
@@ -32,32 +32,48 @@ function init () {
 function drawAll() {
     request = window.requestAnimationFrame(drawAll);
     context.clearRect(0,0, 512, 320);
-    context.fillStyle = blueList[index]
-    context.fillRect(0, 0, canvas.width, canvas.height);
 
     if (maxHeight < total) {
         maxHeight = total;
     }
 
-    if (counter >= 500) {
+    context.fillStyle = blueList[index];
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+
+    if (counter >= 100) {
         playerY -= speed;
-        speed = total/100;
+
+        if (maxHeight >= 10000) {
+            speed = total/150;
+        } else {
+            speed = total/100;
+        } 
+        
         context.drawImage(playerImage, 
             76.4, 0, playerwidth, playerheight, 
             canvas.width/2-(playerwidth/2), playerY, playerwidth, playerheight/2);
-        
+
         if (playerY <= 0) {
+
             playerY = canvas.height + playerheight/2;
             total -= canvas.height;
             height += canvas.height;
+
+            if (height % (canvas.height * 4) === 0) {
+                index += 1;
+            }
+
             console.log(total);
             speed *= 0.95;
+            
             if (total <= 0) {
                 speed = 0;
-                console.log("Finished");
             };
+
         };
-    } else if (counter < 500) {
+
+    } else if (counter < 100) {
         context.drawImage(playerImage,
             80*6, 0, playerwidth, playerheight,
             canvas.width/2-(playerwidth/2), playerY-72, playerwidth, playerheight/2);
@@ -89,7 +105,7 @@ function scream() {
             average = arraySum / array.length;
             
             // timer for 10s
-            if (counter <= 500) {
+            if (counter <= 100) {
                 total += Math.round(average);
                 console.log(total)
                 counter++;
