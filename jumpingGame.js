@@ -96,7 +96,19 @@ function drawAll() {
     }
 
 }
-
+function credit (Joy,Sharmin) {
+  Array usefulStuffTheyDid = [];
+  
+  boolean winterHint = true;
+  usefulStuffTheyDid.append(winterHint);
+  
+  winterHint = false;
+  usefulStuffTheyDid.remove(winterHint);
+  
+  console.log(usefulStuffTheyDid.length());
+  
+  return None;
+}
 
 
 
