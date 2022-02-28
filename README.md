@@ -10,9 +10,11 @@ Think of the increased lung capacity we could achieve as a population if instead
 We don't want to brag but if we allow people to better hear each other we can probably at least achieve world peace in the 12 hours we have in this hackathon.
 
 ## responsibilities 
-Ben - in charge of scream controlled sidescroller game
-Zhi - in charge of the max scream jumping game
-Patrick: in charge of the volume and speech recognition and integration.
+<ul>
+  <li>Ben - in charge of scream controlled sidescroller game</li>
+  <li> Zhi - in charge of the max scream jumping game</li> 
+  <li>Patrick- in charge of the volume and speech recognition and integration. </li>
+</ul>
 
 
 
